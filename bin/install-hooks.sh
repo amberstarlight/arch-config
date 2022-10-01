@@ -22,7 +22,7 @@ case $(grep -F "$HOOK_DIR_STRING" "$PACMAN_CONF_FILE" >/dev/null; echo $?) in
     exit 0
     ;;
   1)
-    env echo "$HOOK_DIR_STRING" >> "$PACMAN_CONF_FILE"
+    sed --in-place=.bak "/\[options\]/a ${HOOK_DIR_STRING}" "$PACMAN_CONF_FILE"
     env echo -e "${BLUE}...Hooks installed!${NC}"
     exit 0
     ;;
