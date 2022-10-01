@@ -12,7 +12,7 @@ fi
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 PACMAN_CONF_FILE="/etc/pacman.conf"
-HOOK_DIR_STRING="HookDir = ${PARENT_DIR}"
+HOOK_DIR_STRING="HookDir = ${PARENT_DIR}/pacman-hooks"
 
 env echo -e "${BLUE}Adding hook directory to pacman.conf...${NC}"
 
